@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataType)
             type: DataType.STRING,
             allowNull: true
         },
-        owner_id:
+        owner_id: 
         {
             type: DataType.INTEGER,
             allowNull: false
@@ -22,47 +22,97 @@ module.exports = function(sequelize, DataType)
             type: DataType.STRING,
             allowNull: true
         },
+        proficiency: 
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        background: 
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        level: 
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
         health:
         {
-            type: DataType.INTEGER,
+            type: DataType.STRING,
             allowNull: true
         },
         armorclass:
         {
-            type: DataType.INTEGER,
+            type: DataType.STRING,
             allowNull: true
         },
         initiative:
         {
-            type: DataType.INTEGER,
+            type: DataType.STRING,
+            allowNull: true
+        },
+        speed:
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        hitdice:
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        deathsaves:
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        personalitytraits:
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        bonds:
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        ideals:
+        {
+            type: DataType.STRING,
+            allowNull: true
+        },
+        flaws:
+        {
+            type: DataType.STRING,
             allowNull: true
         },
         strength:
         {
             type: DataType.INTEGER,
-            allowNull: true
+            allowNull: true 
         },
         strengthAbilityScore:
         {
             type: DataType.INTEGER,
             allowNull: true
         },
-        dexerity:
+        dexterity:
         {
             type: DataType.INTEGER,
             allowNull: true
         },
-        dexerityAbilityScore:
+        dexterityAbilityScore:
         {
             type: DataType.INTEGER,
             allowNull: true
         },
-        constituton:
+        constitution:
         {
             type: DataType.INTEGER,
             allowNull: true
         },
-        constitutonAbilityScore:
+        constitutionAbilityScore:
         {
             type: DataType.INTEGER,
             allowNull: true
@@ -99,12 +149,12 @@ module.exports = function(sequelize, DataType)
         },
         inventory:
         {
-            type: DataType.STRING,
+            type: DataType.INTEGER,
             allowNull: true
         },
         backstory:
         {
-            type: DataType.STRING,
+            type: DataType.INTEGER,
             allowNull: true
         }
     })

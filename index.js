@@ -6,11 +6,13 @@ require('dotenv').config();
  var sheettable = require('./controllers/sheettablecontroller')
  var bodyParser = require('body-parser');
 
+ app.use(require("./middleware/header"));
  app.use(bodyParser.json());
+ //app.use(require('./middleware/validate-session'));
 
  db.sync();//{force:true}//deletes old table
 
- app.use('/user', user);
+ app.use('/user', user); 
  app.use('/CharacterMain', sheettable)
 
  app.listen(process.env.PORT, function()
