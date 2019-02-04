@@ -13,7 +13,7 @@ router.get('/allSheets', validateSession, (req, res) =>
 
 router.post('/CreateCharacter', validateSession, (req, res) =>
 {
-    const sheetobj =
+    const sheetobj = 
     {
         characterName: req.body.charactersheet.characterName,
         owner_id: req.user.id,
@@ -76,7 +76,6 @@ router.put('/update/:id', validateSession, (req, res) =>
     sheet.update(
         {
             characterName: req.body.charactersheet.characterName,
-            owner_id: req.user.id,
             class: req.body.charactersheet.class,
             race: req.body.charactersheet.race,
             proficiency: req.body.charactersheet.proficiency,
