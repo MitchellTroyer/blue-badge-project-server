@@ -27,7 +27,7 @@ router.post('/CreateUser', (req, res) =>
         })
 })
 
-router.post('/signIn', function(req, res)
+router.post('/signIn', validateSession, function(req, res)
 {
     User.findOne({where:{username:req.body.user.username}})
     .then(user => 
