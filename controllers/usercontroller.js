@@ -4,6 +4,7 @@ var db = require('../db');
 var User = db.import('../models/user');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
+const validateSession = require('../middleware/validate-session')
 
 router.post('/CreateUser', (req, res) =>
 {
@@ -27,12 +28,12 @@ router.post('/CreateUser', (req, res) =>
         })
 })
 
-router.post('/signIn', validateSession, function(req, res)
+router.post('/signIn', function(req, res)
 {
     User.findOne({where:{username:req.body.user.username}})
     .then(user => 
         {
-            if(user)
+            if(user) 
             {
                 bcrypt.compare(req.body.user.password, user.password, function(err, matches)
                 {
