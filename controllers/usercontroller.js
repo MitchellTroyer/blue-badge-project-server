@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db');
-var User = db.import('../models/user');
+var User = db.import('../models/user'); 
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
-const validateSession = require('../middleware/validate-session')
 
 router.post('/CreateUser', (req, res) =>
 {

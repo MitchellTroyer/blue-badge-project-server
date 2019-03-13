@@ -11,7 +11,8 @@ module.exports = function(req, res, next)
         { //4-->no user provided so only token is checked, checks to prevent unautherized use of a token assigned to a different user
             jwt.verify(sessionToken, process.env.JWT_SECRET, (err, decoded) => 
             { //5-->verify decodes the token with the secret, then sends a callback with two vairbales. success or fail
-                if(decoded){
+                if(decoded)
+                {
                     User.findOne({where: { id: decoded.id}}).then(user => 
                     { //6-->if decoded has value the sequelize findone method looks for an id in th eusers table that matches decoded.id property.
                         req.user = user; //7-->callback sets the user value for the request(req.user) as the id value passed to it then sneds the rquest on to its next destintation
